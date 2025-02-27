@@ -1,15 +1,12 @@
 import { Stack } from 'expo-router';
-import { AuthProvider } from '../context/AuthContext';
 
 export default function Layout() {
   return (
-    <AuthProvider>
-      <Stack screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="(auth)/splash" />
-        <Stack.Screen name="(auth)/login" />
-        <Stack.Screen name="(auth)/signup" />
-        <Stack.Screen name="(tabs)" />
-      </Stack>i
-    </AuthProvider>
+    <Stack screenOptions={{ headerShown: false }}>
+      {/* ✅ Force the app to start at Splash */}
+      <Stack.Screen name="(auth)/splash" options={{ title: 'Splash' }} initialRouteName="(auth)/splash" />
+      <Stack.Screen name="(auth)/login" options={{ title: 'Login' }} />
+      <Stack.Screen name="(tabs)" options={{ title: 'Home' }} />
+    </Stack>
   );
 }

@@ -7,7 +7,7 @@ export const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider value={{ user, setUser }}>
-      {children}
+      {children}  {/* ✅ Ensure children is properly wrapped */}
     </AuthContext.Provider>
   );
 };
